@@ -8,4 +8,34 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+
+    <!--    下面两种全屏铺满方式任选一，如果在代码中设置高度也MATCH_PARENT，第一种会保留手机上的导航栏，而第二种会连导航栏都覆盖掉。-->
+
+    <style name="dialogFullScreen1" parent="Theme.AppCompat.Dialog">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:padding">0dp</item>
+        <item name="android:windowBackground">@android:color/white</item>
+        <item name="android:textColor">@android:color/black</item>
+    </style>
+
+
+    <style name="dialogFullScreen2" parent="Theme.AppCompat.Dialog">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:windowBackground">@android:color/white</item>
+        <item name="android:textColor">@android:color/black</item>
+        <item name="android:windowFullscreen">true</item>
+    </style>
+
+
+<!--    设置点击外部空白处不会关闭对话框-->
+    <style name="dialogNotDismiss" parent="Theme.AppCompat.Dialog">
+        <item name="android:windowBackground">@android:color/white</item>
+        <item name="android:textColor">@android:color/black</item>
+        <item name="android:windowCloseOnTouchOutside">false</item>
+    </style>
+
 </resources>

@@ -11,10 +11,82 @@
         android:id="@+id/tv_show_my_dialog1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Show MyDialog1"
+        android:text="以Dialog创建DialogFragment"
         android:textAllCaps="false"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/tv_show_my_dialog2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="以布局View创建DialogFragment"
+        android:textAllCaps="false"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_show_my_dialog1" />
+
+    <Button
+        android:id="@+id/tv_show_my_dialog3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="将对话框的宽或者高铺满屏幕"
+        android:textAllCaps="false"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_show_my_dialog2" />
+
+    <Button
+        android:id="@+id/tv_show_my_dialog4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="设置点击外部空白处不会关闭对话框"
+        android:textAllCaps="false"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_show_my_dialog3" />
+
+    <Button
+        android:id="@+id/tv_show_my_dialog5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="设置在弹出对话框后同时弹出软键盘"
+        android:textAllCaps="false"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_show_my_dialog4" />
+
+    <Button
+        android:id="@+id/tv_show_my_dialog6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="在Fragment里启动对话框"
+        android:textAllCaps="false"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_show_my_dialog5" />
+
+    <TextView
+        android:id="@+id/tv_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="与activity里一样，唯一的区别是如果打算依然用老套的onActivityResult来向下传值，
+    那么就需要设置一个目标Fragment，代码里setTargetFragment()方法就是起到这个作用的，
+    在下面的代码里用MyDialog5 启动了 MyDialog2（DialogFragment其实就是Fragment）。"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_show_my_dialog6" />
+
+    <Button
+        android:id="@+id/tv_show_my_dialog7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="设置圆角"
+        android:textAllCaps="false"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_info" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -3,6 +3,7 @@ package com.wy521angel.dialogtest;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
 
 import androidx.annotation.NonNull;
@@ -19,9 +20,28 @@ public class MyDialog1 extends DialogFragment {
     public Dialog onCreateDialog(@Nullable Bundle savedInstanceState) {
         //创建对话框，需要返回dialog
         AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
-        builder.setTitle("MyDialog1");
-        builder.setMessage("以Dialog创建DialogFragment");
-        return builder.create();
+//        builder.setTitle("MyDialog1")
+//                .setMessage("以Dialog创建DialogFragment")
+//                .setPositiveButton("确定", null)
+//                .setNegativeButton("取消", null)
+//                .setCancelable(false);
+
+        //也可以使用自定义 View 来创建：
+//        LayoutInflater inflater = getActivity().getLayoutInflater();
+//        View view = inflater.inflate(R.layout.dialog_sure, null);
+//        builder.setView(view);
+//        return builder.create();
+
+        //另一种方法：
+        LayoutInflater inflater = getActivity().getLayoutInflater();
+        View view = inflater.inflate(R.layout.dialog_sure, null);
+        Dialog dialog = new Dialog(getActivity());
+        // 设置主题的构造方法
+        // Dialog dialog = new Dialog(getActivity(), R.style.CustomDialog);
+        dialog.setContentView(view);
+        // Do Someting
+        return dialog;
+
     }
 
     @Override
