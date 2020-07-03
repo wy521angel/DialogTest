@@ -17,10 +17,34 @@ import androidx.fragment.app.DialogFragment;
  */
 public class MyDialog3 extends DialogFragment {
 
+    interface DialogListener {
+        void onSure();
+
+        void onCancel();
+    }
+
+    public DialogListener dialogListener;
+
+    public void setDialogListener(DialogListener dialogListener) {
+        this.dialogListener = dialogListener;
+    }
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.dialog_input, container, false);
+        view.findViewById(R.id.cancel).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (dialogListener != null) dialogListener.onCancel();
+            }
+        });
+        view.findViewById(R.id.sure).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (dialogListener != null) dialogListener.onSure();
+            }
+        });
         return view;
     }
 

@@ -2,6 +2,7 @@ package com.wy521angel.dialogtest;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -44,12 +45,26 @@ public class DialogFragmentActivity extends AppCompatActivity {
         findViewById(R.id.tv_show_my_dialog4).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                MyDialog3 myDialog3 = new MyDialog3();
+                final MyDialog3 myDialog3 = new MyDialog3();
                 //方法一
 //                myDialog3.setStyle(DialogFragment.STYLE_NORMAL, R.style.dialogNotDismiss);//添加style
                 //方法二
 //在dialog中添加 getDialog().setCanceledOnTouchOutside(false);
                 myDialog3.show(getSupportFragmentManager(), "MyDialog4");
+
+                myDialog3.setDialogListener(new MyDialog3.DialogListener() {
+                    @Override
+                    public void onSure() {
+                        Toast.makeText(DialogFragmentActivity.this, "sure", Toast.LENGTH_SHORT).show();
+                        myDialog3.dismissAllowingStateLoss();
+                    }
+
+                    @Override
+                    public void onCancel() {
+                        Toast.makeText(DialogFragmentActivity.this, "cancel", Toast.LENGTH_SHORT).show();
+                        myDialog3.dismissAllowingStateLoss();
+                    }
+                });
             }
         });
 
