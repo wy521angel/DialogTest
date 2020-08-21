@@ -92,5 +92,13 @@ public class DialogFragmentActivity extends AppCompatActivity {
                 myDialog6.show(getSupportFragmentManager(), "MyDialog7");
             }
         });
+
+        findViewById(R.id.tv_show_my_dialog8).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                MyDialog7 myDialog7 = new MyDialog7();
+                myDialog7.show(getSupportFragmentManager(), "MyDialog8");
+            }
+        });
     }
 }

@@ -89,4 +89,14 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_info" />
 
+    <Button
+        android:id="@+id/tv_show_my_dialog8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="带弹出动画的底部对话框"
+        android:textAllCaps="false"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_show_my_dialog7" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
